@@ -8,4 +8,4 @@
     - name: Show
       junos_config:
         lines:
-        - show interface terse
+        - show vlans
