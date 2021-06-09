@@ -1,0 +1,11 @@
+---
+- name: Show SW vQFX Lab
+  hosts: all
+  gather_facts: no
+  connection: netconf
+
+  tasks:
+    - name: Show
+      junos_config:
+        lines:
+        - show interface terse
