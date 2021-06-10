@@ -8,4 +8,5 @@
     - name: Show
       junos_config:
         lines:
+        - set cli screen-length 0
         - show vlans
