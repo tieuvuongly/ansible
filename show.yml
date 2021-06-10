@@ -5,8 +5,8 @@
   connection: netconf
 
   tasks:
-    - name: Show
-      junos_config:
-        lines:
-        - set cli screen-length 0
-        - show vlans
+    - name: run multiple commands on remote nodes
+      junipernetworks.junos.junos_command:
+        commands:
+        - show version
+        - show interfaces
