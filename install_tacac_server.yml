@@ -22,5 +22,5 @@
         - set system tacplus-options authorization-time-interval 15
         - set system services ssh authentication-order tacplus 
         
-  register: output
+      register: output
     - debug: var=output.stdout_lines
