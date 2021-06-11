@@ -1,0 +1,23 @@
+---
+- name: Configuration SW vQFX Lab
+  hosts: all
+  gather_facts: no
+  connection: netconf
+
+  tasks:
+    - name: Configuration tacplus_server
+      junos_config:
+        lines:
+        - set system tacplus-server 172.25.203.154
+        - set system tacplus-server 172.25.203.154 port 49
+        - set system tacplus-server 172.25.203.154 single-connection
+        - set system tacplus-server 172.25.203.154 secret 0hjfScHbfsInsB3n
+        - set system tacplus-server 172.25.203.154 timeout 2
+        - set system authentication-order [ tacplus password ]
+        - set system accounting events login
+        - set system accounting events change-log
+        - set system accounting events interactive-commands
+        - set system accounting destination tacplus server 172.25.203.154 secret 0hjfScHbfsInsB3n
+        - set system accounting destination tacplus server 172.25.203.154 source-address "{{ ansible_host }}"
+        - set system tacplus-options authorization-time-interval 15
+        - set system services ssh authentication-order tacplus 
