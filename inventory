@@ -1,0 +1,15 @@
+[JUNOS]
+SPINE1 ansible_host=172.25.200.101
+SPINE2 ansible_host=172.25.200.102
+LEAF2 ansible_host=172.25.200.103
+LEAF1 ansible_host=172.25.200.104
+
+[JUNOS:vars]
+ansible_connection=netconf
+ansible_network_os=junos
+ansible_user=lytm
+#ansible_ssh_pass=
+ansible_become=yes
+ansible_become_method=enable
+ansible_python_interpreter=/usr/bin/python3
+#ansible_ssh_private_key_file=/home/aulrad/.ssh/id_rsa.pub
