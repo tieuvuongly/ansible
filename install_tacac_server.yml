@@ -21,3 +21,6 @@
         - set system accounting destination tacplus server 172.25.203.154 source-address "{{ ansible_host }}"
         - set system tacplus-options authorization-time-interval 15
         - set system services ssh authentication-order tacplus 
+        
+  register: output
+    - debug: var=output.stdout_lines
